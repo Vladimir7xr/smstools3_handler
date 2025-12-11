@@ -109,7 +109,7 @@ sudo chmod +x /usr/local/bin/sms_event.pl
 
 Create necessary directories:
 ```bash
-sudo mkdir -p /var/log/sms /var/tmp
+sudo mkdir -p /var/log/ /var/tmp
 ```
 
 ### Set Permissions
@@ -135,7 +135,7 @@ sudo chown smstools:smstools /usr/local/bin/sms_event.sh
     - Mode `"LIST"`: Only allowed commands (recommended)
     ```bash
     COMMAND_MODE="LIST"
-    ALLOWED_COMMANDS=("date" "uptime" "df -h" "systemctl status sshd" "ping -c 3 8.8.8.8")
+    ALLOWED_COMMANDS=("date" "uptime" "df -h" "systemctl status sshd" "ping -c 3 8.8.8.8" "/root/scripts/backup.sh")
     ```
 
 - **Other Important Settings**:
@@ -147,16 +147,8 @@ sudo chown smstools:smstools /usr/local/bin/sms_event.sh
 	SENDSMS="/usr/local/bin/sendsms"  # PATH TO sendsms (standard in smstools)
 	MAX_LOG_SIZE_KB=512  # The maximum log file size after which rotation begins (kilobytes)
 	LOG_BACKUP_COUNT=7  # Total number of archive copies
-	USE_GZIP="NO"  # Whether or not to use GZIP for archive copies compression (recommended to set to "NO" when using ZFS)
+	USE_GZIP="NO"  # Whether to use GZIP for archive copies compression (recommended to set to "NO" when using ZFS)
     ```
-
-For **Perl Version**:
-```perl
-my @ALLOW_PHONES = ("79991234567", "79991234568");
-my $COMMAND_CHAR = "#";
-my $COMMAND_MODE = "LIST";
-my @ALLOWED_COMMANDS = ("date", "systemctl restart nginx", "/root/scripts/backup.sh");
-```
 
 ---
 
