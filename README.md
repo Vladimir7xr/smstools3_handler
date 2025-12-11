@@ -85,14 +85,12 @@ Add or modify the following line of your `/etc/smsd.conf`:
 
 For **Bash** version:
 ```
-[events]
-eventhandler = /usr/local/bin/sms_event.sh %F
+eventhandler = /usr/local/bin/sms_event.sh
 ```
 
 For **Perl** version:
 ```
-[events]
-eventhandler = /usr/local/bin/sms_event.pl %F
+eventhandler = /usr/local/bin/sms_event.pl
 ```
 
 ### Place the Scripts
@@ -145,7 +143,7 @@ sudo chown smstools:smstools /usr/local/bin/sms_event.sh
     COMMAND_CHAR="#"   # Character preceding the command in SMS
     SEND_BACK_REPORT="YES"   # Whether to send back a result report
     MAX_SMS_LENGTH=900   # Max length of reply SMS (characters)
-	MAX_LOG_LENGTH=2000  # The maximum number of characters to log from the beginning of the command output. (characters)
+	MAX_LOG_LENGTH=2000  # The maximum number of characters to log from the beginning of the command output.
 	SENDSMS="/usr/local/bin/sendsms"  # PATH TO sendsms (standard in smstools)
 	MAX_LOG_SIZE_KB=512  # The maximum log file size after which rotation begins (kilobytes)
 	LOG_BACKUP_COUNT=7  # Total number of archive copies
