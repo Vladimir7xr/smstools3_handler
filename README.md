@@ -144,10 +144,10 @@ sudo chown smstools:smstools /usr/local/bin/sms_event.sh
     SEND_BACK_REPORT="YES"   # Whether to send back a result report
     MAX_SMS_LENGTH=900   # Max length of reply SMS (characters)
 	MAX_LOG_LENGTH=2000  # The maximum number of characters to log from the beginning of the command output.
-	SENDSMS="/usr/local/bin/sendsms"  # PATH TO sendsms (standard in smstools)
+	SENDSMS="/usr/local/bin/sendsms"  # PATH TO sendsms
 	MAX_LOG_SIZE_KB=512  # The maximum log file size after which rotation begins (kilobytes)
 	LOG_BACKUP_COUNT=7  # Total number of archive copies
-	USE_GZIP="NO"  # Whether to use GZIP for archive copies compression (recommended to set to "NO" when using ZFS)
+	USE_GZIP="NO"  # Whether to use GZIP for archive copies compression (recommended to set to "NO" when using ZFS filesystem)
     ```
 
 ---
