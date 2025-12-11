@@ -85,12 +85,14 @@ Add or modify the following line of your `/etc/smsd.conf`:
 
 For **Bash** version:
 ```
-eventhandler = /usr/local/bin/sms_event.sh
+[events]
+eventhandler = /usr/local/bin/sms_event.sh %F
 ```
 
 For **Perl** version:
 ```
-eventhandler = /usr/local/bin/sms_event.pl
+[events]
+eventhandler = /usr/local/bin/sms_event.pl %F
 ```
 
 ### Place the Scripts
@@ -143,6 +145,11 @@ sudo chown smstools:smstools /usr/local/bin/sms_event.sh
     COMMAND_CHAR="#"   # Character preceding the command in SMS
     SEND_BACK_REPORT="YES"   # Whether to send back a result report
     MAX_SMS_LENGTH=900   # Max length of reply SMS (characters)
+	MAX_LOG_LENGTH=2000  # The maximum number of characters to log from the beginning of the command output. (characters)
+	SENDSMS="/usr/local/bin/sendsms"  # PATH TO sendsms (standard in smstools)
+	MAX_LOG_SIZE_KB=512  # The maximum log file size after which rotation begins (kilobytes)
+	LOG_BACKUP_COUNT=7  # Total number of archive copies
+	USE_GZIP="NO"  # Whether or not to use GZIP for archive copies compression (recommended to set to "NO" when using ZFS)
     ```
 
 For **Perl Version**:
@@ -246,8 +253,7 @@ MIT License - see the LICENSE file for details.
 
 ## IMPORTANT DISCLAIMER
 
-**Use this script at your own risk!**
-
+**Use this script at your own risk!**  
 The scripts are provided "as is," without any warranty of any kind. The author is not responsible for any damages, data loss, or unauthorized access that may occur as a result of using these scripts.
 
 Always test in an isolated environment before using on production servers!
