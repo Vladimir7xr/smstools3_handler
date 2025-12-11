@@ -85,14 +85,12 @@ Add or modify the following line of your `/etc/smsd.conf`:
 
 For **Bash** version:
 ```
-[events]
-eventhandler = /usr/local/bin/sms_event.sh %F
+eventhandler = /usr/local/bin/sms_event.sh
 ```
 
 For **Perl** version:
 ```
-[events]
-eventhandler = /usr/local/bin/sms_event.pl %F
+eventhandler = /usr/local/bin/sms_event.pl
 ```
 
 ### Place the Scripts
