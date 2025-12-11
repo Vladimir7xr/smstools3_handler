@@ -37,7 +37,7 @@ A set of scripts for executing commands on a server via SMS messages. Solution f
 - Protection against dangerous commands (e.g., `rm -rf`, `dd`, `mkfs`)
 - Execution timeouts (60 sec for regular commands, 30 sec for network commands)
 - Detailed logging of all operations in three separate logs
-- Automatic log rotation with configurable size and archiving
+- Automatic log rotation with configurable size and optional compression
 - Dependency checking at startup
 
 ---
