@@ -1,5 +1,9 @@
 # smstools3_handler
 
+![Bash](https://img.shields.io)
+![Perl](https://img.shields.io)
+![License](https://img.shields.io)
+
 **SMS handler for work with SMS Server Tools 3 (smstools3)**
 
 A set of scripts for executing commands on a server via SMS messages. Solution for basic monitoring and management when SSH or internet access is unavailable (e.g., during network failures).
